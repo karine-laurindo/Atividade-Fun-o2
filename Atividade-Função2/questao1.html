@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questão 1</title>
+</head>
+<body>
+ <!-- 1) Escreva um script que recebe as 3 notas de um aluno por
+ parâmetro e uma letra.Se a letra for A o procedimento calcula a 
+média aritmética das notas do aluno, se for P, a sua média ponderada
+(pesos: 5, 3 e 2). A média calculada também deve retornar por parâmetro. -->
+
+<script>
+    // As três notas e o tipo de média desejada são recebidos como
+    // variáveis globais.
+    let nota1 = parseFloat (prompt("Digite sua primeira nota: "))
+    let nota2 = parseFloat (prompt("Digite sua segunda nota: "))
+    let nota3 = parseFloat (prompt("Digite sua terceira nota: "))
+    let tipoMedia = (prompt("Informe qual média você deseja ver: Digite A para - aritmética /n Digite P para - ponderada")).toUpperCase()
+
+    // A função recebe os valores no parâmetro, caso o usuário digite a letra "A",
+    // será  mostrada sua média aritmética, caso o usuário digite a letra "P", será
+    // mostrada sua média ponderada.
+    function media (nota1, nota2, nota3, tipoMedia){
+        if(tipoMedia == 'A' ){
+            let aritmetica = (nota1 + nota2 + nota3)/3
+            console.log(`A sua média aritmética é: ${aritmetica}`)
+        }
+        else if(tipoMedia == 'P'){
+            let ponderada = (nota1*5 + nota2*3 + nota3*2)/10
+            console.log(`A sua média ponderada é: ${ponderada}`)
+        }
+    }
+    media(nota1, nota2, nota3, tipoMedia)
+
+</script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questão 3</title>
+</head>
+<body>
+    <!-- 3) Crie uma função que receba como parâmetro a hora 
+de início e a hora de término de um jogo, ambas subdivididas
+em dois valores distintos: horas e minutos. A função deverá 
+retornar a duração expressa em minutos, considerando que o
+tempo máximo de um jogo é de 24 horas e que ele pode começar
+em um dia e terminar no outro. -->
+
+  
+     <script>
+        // O horário de início e término são recebidos, horas e minutos
+        //separadamente, como variáveis globais.
+        let horaI = parseInt(prompt("Que horas começou? "))
+        let minutoI = parseInt(prompt("e quantos minutos? "))
+        let horaT = parseInt(prompt("Que horas terminou? "))
+        let minutoT = parseInt(prompt("e quantos minutos? "))
+
+        // A função recebe os valores no parâmetro
+        function tempo(horaI, minutoI, horaT, minutoT){
+       // Cálculo de soma dos minutos de início e término.
+         var ini = minutoI - minutoT 
+        //  Se a hora de início for maior que a hora de término,
+        // seus valores são somados, multiplicados por 60 (que é
+        // a operação de conversão para minutos) e somados aos
+        // minutos que já foram contabilizados anteriormente.
+         if( horaI > horaT){
+          inicio = ((horaI + horaT)*60) + ini
+
+          console.log(`O jogo durou ${inicio} minutos.`)
+         //  Se a hora de início for menor que a hora de término,
+        // seus valores são subtraidos, multiplicados por 60 (que é
+        // a operação de conversão para minutos), somados aos
+        // minutos que já foram contabilizados anteriormente e
+        // multiplicados por -1 para que o valor final fique positivo.
+         }else {
+           inicio = (((horaI-horaT)*60) + ini)*-1
+           console.log(`O jogo durou ${inicio} minutos.`)
+         }
+          
+            
+        } 
+        tempo(horaI, minutoI, horaT, minutoT)
+
+     </script> 
+
+</body>
+</html>
